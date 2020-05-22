@@ -1,2 +1,2 @@
 # 2048
- copy2048
+No commercial use
