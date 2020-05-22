@@ -36,6 +36,25 @@ public class countModel : MonoBehaviour
         }
     }
 
+    public void moveNumber(moveDirection direction)
+    {
+        switch (direction)
+        {
+            case moveDirection.left:
+                moveLeft();
+                break;
+            case moveDirection.right:
+                moveRight();
+                break;
+            case moveDirection.up:
+                moveUp();
+                break;
+            case moveDirection.down:
+                moveDown();
+                break;
+        }
+    }
+
     //moveToLeft
     public void moveLeft()
     {

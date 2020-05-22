@@ -70,7 +70,7 @@ public class view : MonoBehaviour
     }
 
     //前后比较，生成对应的数字
-    public bool compareTZFZGrid(int direction)
+    public bool compareTZFZGrid(moveDirection direction)
     {
         bool isChange = false;
         for(int i=0;i<4; i++)
@@ -132,25 +132,25 @@ public class view : MonoBehaviour
     /// /// <param name="veNumber">行数</param>
     /// /// <param name="hoNumber">列数</param>
     /// <param name="number">移动的数字</param>
-    public void blockMove(GameObject parent,int direction, int veNumber,int hoNumber,int number)
+    public void blockMove(GameObject parent,moveDirection direction, int veNumber,int hoNumber,int number)
     {
       GameObject bl =  loadPreb(block, "moveAni", parent);
         setItemColor(bl,number);
         switch (direction)
         {
-            case 1:
+            case moveDirection.left:
                 bl.transform.SetParent(gridGroup[veNumber * 4].transform);
                 bl.transform.DOLocalMove(Vector3.zero, 0.07f).SetEase(Ease.Linear).OnComplete(()=>Destroy(bl));
                 break;
-            case 2:
+            case moveDirection.right:
                 bl.transform.SetParent(gridGroup[veNumber * 4+3].transform);
                 bl.transform.DOLocalMove(Vector3.zero, 0.07f).SetEase(Ease.Linear).OnComplete(() => Destroy(bl));
                 break;
-            case 3:
+            case moveDirection.up:
                 bl.transform.SetParent(gridGroup[hoNumber].transform);
                 bl.transform.DOLocalMove(Vector3.zero, 0.07f).SetEase(Ease.Linear).OnComplete(() => Destroy(bl));
                 break;
-            case 4:
+            case moveDirection.down:
                 bl.transform.SetParent(gridGroup[12+hoNumber].transform);
                 bl.transform.DOLocalMove(Vector3.zero, 0.07f).SetEase(Ease.Linear).OnComplete(() => Destroy(bl));
                 break;

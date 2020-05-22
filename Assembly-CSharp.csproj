@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\script\control.cs" />
     <Compile Include="Assets\script\countModel.cs" />
+    <Compile Include="Assets\script\moveDirection.cs" />
     <Compile Include="Assets\script\saveSighleBlock.cs" />
     <Compile Include="Assets\script\test.cs" />
     <Compile Include="Assets\script\view.cs" />

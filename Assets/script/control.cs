@@ -40,8 +40,8 @@ public class control : MonoBehaviour
         if (DValue.x >= disJugdement && Math.Abs(DValue.y) < disJugdement)
         {
             //----------toRight
-            countModel.instance.moveRight();
-            if (view.instance.compareTZFZGrid(2))
+            countModel.instance.moveNumber(moveDirection.right);
+            if (view.instance.compareTZFZGrid(moveDirection.right))
             {
                 countModel.instance.randomIni();
             }
@@ -49,8 +49,8 @@ public class control : MonoBehaviour
         if(DValue.x <=- disJugdement && Math.Abs(DValue.y) < disJugdement)
         {
             //----------toLeft
-            countModel.instance.moveLeft();
-            if (view.instance.compareTZFZGrid(1))
+            countModel.instance.moveNumber(moveDirection.left);
+            if (view.instance.compareTZFZGrid(moveDirection.left))
             {
                 countModel.instance.randomIni();
             }
@@ -58,8 +58,8 @@ public class control : MonoBehaviour
         if (DValue.y <= -disJugdement && Math.Abs(DValue.x) < disJugdement)
         {
             //----------toDown
-            countModel.instance.moveDown();
-            if (view.instance.compareTZFZGrid(4))
+            countModel.instance.moveNumber(moveDirection.down);
+            if (view.instance.compareTZFZGrid(moveDirection.down))
             {
                 countModel.instance.randomIni();
             }
@@ -67,8 +67,8 @@ public class control : MonoBehaviour
         if (DValue.y >= disJugdement && Math.Abs(DValue.x) < disJugdement)
         {
             //----------toUp
-            countModel.instance.moveUp();
-            if (view.instance.compareTZFZGrid(3))
+            countModel.instance.moveNumber(moveDirection.up);
+            if (view.instance.compareTZFZGrid(moveDirection.up))
             {
                 countModel.instance.randomIni();
             }
